@@ -1,1 +1,175 @@
-nothing here. please try again later
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Letterffect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+</head>
+
+<body style="background-color:
+#ededed
+;">
+<script>
+        function copy(selector){
+            $(selector).select().focus();
+            document.execCommand("copy");
+    }
+        function copied(selector){
+        var selected = $(selector);
+        selected.addClass("is-success");
+        $(selector + " i").attr("class", "fa fa-check");
+        setTimeout(() => {selected.removeClass("is-success");
+        $(selector + " i").attr("class", "fa fa-clipboard");}, 3000);
+        }
+        </script>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title" style="font-family: 'Gochi Hand', cursive;">letterffect</h1>
+                <h2 class="subtitle">your words, more beautiful.</h2>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+                <h2 class="subtitle has-text-centered" align=center>ყσuя тεxт ω¡łł Ъε тн¡ร ωคყ</h2>
+            <nav class="level">
+                <div class="level-item">
+                    <div class="field has-addons">
+                        <p class="control">
+                            <button class="button" id="first-copy"><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+                        </p>
+                        <p class="control">
+                            <input class="input" type="text" placeholder="Normal input" id="first-input" value="ata">
+                        </p>
+                        <p class="control">
+                            <button class="button" id="first-button">Letterffect it!</button>
+                        </p>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <hr>
+    <section class="section">
+            <div class="container">
+                    <h2 class="subtitle has-text-centered" align=center>yσυr τєxτ ωiℓℓ вє τнis ωαy</h2>
+                <nav class="level">
+                    <div class="level-item">
+                        <div class="field has-addons">
+                            <p class="control">
+                                <button class="button" id="second-copy"><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+                            </p>
+                            <p class="control">
+                                <input class="input" type="text" placeholder="Normal input" id="second-input" value="ata">
+                            </p>
+                            <p class="control">
+                                <button class="button" id="second-button">Letterffect it!</button>
+                            </p>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+        <hr>
+        <section class="section">
+                <div class="container">
+                        <h2 class="subtitle has-text-centered" align=center>ŶØцЯ †€ҳ† ખเŁŁ β€ †Ћเک ખДŶ</h2>
+                    <nav class="level">
+                        <div class="level-item">
+                            <div class="field has-addons">
+                                <p class="control">
+                                    <button class="button" id="third-copy"><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+                                </p>
+                                <p class="control">
+                                    <input class="input" type="text" placeholder="Normal input" id="third-input" value="ata">
+                                </p>
+                                <p class="control">
+                                    <button class="button" id="third-button">Letterffect it!</button>
+                                </p>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </section>
+            <footer class="footer">
+                <div class="container">
+                    <div class="content has-text-centered">
+                        <p>WORK IN PROGRESS. by SMixqse.</p>
+                    </div>
+                </div>
+            </footer>
+    <script>
+        $("p.control input,button").toggleClass("is-medium has-text-centered");
+        $("#first-button").click(function() {
+            try {
+            var tempContent = $("#first-input").val();
+            tempContent = tempContent.replace(/a/gi, "ค");
+            tempContent = tempContent.replace(/b/gi, "Ъ");
+            tempContent = tempContent.replace(/c/gi, "c");
+            tempContent = tempContent.replace(/d/gi, "d");
+            tempContent = tempContent.replace(/e/gi, "ε");
+            tempContent = tempContent.replace(/f/gi, "ƒ");
+            tempContent = tempContent.replace(/g/gi, "g");
+            tempContent = tempContent.replace(/h/gi, "н");
+            tempContent = tempContent.replace(/i/gi, "¡");
+            tempContent = tempContent.replace(/j/gi, "j");
+            tempContent = tempContent.replace(/k/gi, "к");
+            tempContent = tempContent.replace(/l/gi, "ł");
+            tempContent = tempContent.replace(/m/gi, "м");
+            tempContent = tempContent.replace(/n/gi, "ห");
+            tempContent = tempContent.replace(/o/gi, "σ");
+            tempContent = tempContent.replace(/p/gi, "p");
+            tempContent = tempContent.replace(/q/gi, "q");
+            tempContent = tempContent.replace(/r/gi, "я");
+            tempContent = tempContent.replace(/s/gi, "ร");
+            tempContent = tempContent.replace(/t/gi, "т");
+            tempContent = tempContent.replace(/u/gi, "u");
+            tempContent = tempContent.replace(/v/gi, "v");
+            tempContent = tempContent.replace(/w/gi, "ω");
+            tempContent = tempContent.replace(/x/gi, "x");
+            tempContent = tempContent.replace(/y/gi, "ყ");
+            tempContent = tempContent.replace(/z/gi, "z");
+            $("#first-input").val(tempContent);
+
+             } catch (e) {alert(e.message)}
+        });
+        $("#first-copy").click(function(){copy("#first-input"); copied("#first-copy");});
+        $("#second-button").click(function() {
+            try {
+            var tempContent = $("#second-input").val();
+            tempContent=tempContent.replace(/a/gi,"α");tempContent=tempContent.replace(/b/gi,"в");tempContent=tempContent.replace(/c/gi,"c");
+            tempContent=tempContent.replace(/d/gi,"∂");tempContent=tempContent.replace(/e/gi,"є");tempContent=tempContent.replace(/f/gi,"ƒ");
+            tempContent=tempContent.replace(/g/gi,"g");tempContent=tempContent.replace(/h/gi,"н");tempContent=tempContent.replace(/i/gi,"i");
+            tempContent=tempContent.replace(/j/gi,"נ");tempContent=tempContent.replace(/k/gi,"к");tempContent=tempContent.replace(/l/gi,"ℓ");
+            tempContent=tempContent.replace(/m/gi,"м");tempContent=tempContent.replace(/n/gi,"ท");tempContent=tempContent.replace(/o/gi,"σ");
+            tempContent=tempContent.replace(/p/gi,"ρ");tempContent=tempContent.replace(/q/gi,"q");tempContent=tempContent.replace(/r/gi,"r");
+            tempContent=tempContent.replace(/s/gi,"s");tempContent=tempContent.replace(/t/gi,"τ");tempContent=tempContent.replace(/u/gi,"υ");
+            tempContent=tempContent.replace(/v/gi,"v");tempContent=tempContent.replace(/w/gi,"ω");tempContent=tempContent.replace(/x/gi,"x");
+            tempContent=tempContent.replace(/y/gi,"y");tempContent=tempContent.replace(/z/gi,"ʑ");
+            $("#second-input").val(tempContent); } catch (e) {alert(e.message)}
+        });
+        $("#second-copy").click(function(){copy("#second-input"); copied("#second-copy");});
+        $("#third-button").click(function() {
+            try {
+            var tempContent = $("#third-input").val();
+            tempContent=tempContent.replace(/a/gi,"Д");tempContent=tempContent.replace(/b/gi,"β");tempContent=tempContent.replace(/c/gi,"¢");
+            tempContent=tempContent.replace(/d/gi,"Ð");tempContent=tempContent.replace(/e/gi,"€");tempContent=tempContent.replace(/f/gi,"ƒ");
+            tempContent=tempContent.replace(/g/gi,"ģ");tempContent=tempContent.replace(/h/gi,"Ћ");tempContent=tempContent.replace(/i/gi,"เ");
+            tempContent=tempContent.replace(/j/gi,"ﮊ");tempContent=tempContent.replace(/k/gi,"Ҝ");tempContent=tempContent.replace(/l/gi,"Ł");
+            tempContent=tempContent.replace(/m/gi,"м");tempContent=tempContent.replace(/n/gi,"ŋ");tempContent=tempContent.replace(/o/gi,"Ø");
+            tempContent=tempContent.replace(/p/gi,"Р");tempContent=tempContent.replace(/q/gi,"Q");tempContent=tempContent.replace(/r/gi,"Я");
+            tempContent=tempContent.replace(/s/gi,"ک");tempContent=tempContent.replace(/t/gi,"†");tempContent=tempContent.replace(/u/gi,"ц");
+            tempContent=tempContent.replace(/v/gi,"ұ");tempContent=tempContent.replace(/w/gi,"ખ");tempContent=tempContent.replace(/x/gi,"ҳ");
+            tempContent=tempContent.replace(/y/gi,"Ŷ");tempContent=tempContent.replace(/z/gi,"Ž");
+            $("#third-input").val(tempContent); } catch (e) {alert(e.message)}
+        });
+        $("#third-copy").click(function(){copy("#third-input"); copied("#third-copy");});
+    </script>
+</body>
+
+</html>
