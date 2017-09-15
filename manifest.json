@@ -1,0 +1,37 @@
+{
+  "name": "Letterffect",
+  "short_name": "LF",
+  "icons": [{
+        "src": "128x128.png",
+        "type": "image/png",
+        "sizes": "128x128"
+      }, {
+        "src": "152x152.png",
+        "type": "image/png",
+        "sizes": "152x152"
+      }, {
+        "src": "144x144.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      }, {
+        "src": "192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "256x256.png",
+        "type": "image/png",
+        "sizes": "256x256"
+      },
+      {
+        "src": "512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }],
+  "start_url": "/?homescreen=1",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ededed",
+  "theme_color": "##ededed"
+}
