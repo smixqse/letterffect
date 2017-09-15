@@ -7,38 +7,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
+
 </head>
 
 <body style="background-color:
 #ededed
 ;">
-<script>
-        function copy(selector){
-              var text = $(selector).html();
-              var textArea = document.createElement("textarea");
-              textArea.style.position = 'fixed';
-                textArea.style.top = 0;
-                textArea.style.left = 0;
-                textArea.style.width = '2em';
-                textArea.style.height = '2em';
-                textArea.style.padding = 0;
-                textArea.style.border = 'none';
-                textArea.style.outline = 'none';
-                textArea.style.boxShadow = 'none';
-                textArea.style.background = 'transparent';
-                textArea.value = text;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-    }
-        function copied(selector){
-        var selected = $(selector);
-        selected.addClass("is-success");
-        $(selector + " i").attr("class", "fa fa-check");
-        setTimeout(() => {selected.removeClass("is-success");
-        $(selector + " i").attr("class", "fa fa-clipboard");}, 3000);
+    <script>
+        function copy(selector) {
+            var text = $(selector).html();
+            var textArea = document.createElement("textarea");
+            textArea.style.position = 'fixed';
+            textArea.style.top = 0;
+            textArea.style.left = 0;
+            textArea.style.width = '2em';
+            textArea.style.height = '2em';
+            textArea.style.padding = 0;
+            textArea.style.border = 'none';
+            textArea.style.outline = 'none';
+            textArea.style.boxShadow = 'none';
+            textArea.style.background = 'transparent';
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+        }
+
+        function copied(selector) {
+            var selected = $(selector);
+            selected.addClass("is-success");
+            $(selector + " i").attr("class", "fa fa-check");
+            setTimeout(() => {
+                selected.removeClass("is-success");
+                $(selector + " i").attr("class", "fa fa-clipboard");
+            }, 3000);
         }
 
         function convertText(text, number) {
@@ -73,26 +76,82 @@
                     tempContent = tempContent.replace(/z/gi, "z");
                     break;
                 case 2:
-                    tempContent=tempContent.replace(/a/gi,"α");tempContent=tempContent.replace(/b/gi,"в");tempContent=tempContent.replace(/c/gi,"c");
-                    tempContent=tempContent.replace(/d/gi,"∂");tempContent=tempContent.replace(/e/gi,"є");tempContent=tempContent.replace(/f/gi,"ƒ");
-                    tempContent=tempContent.replace(/g/gi,"g");tempContent=tempContent.replace(/h/gi,"н");tempContent=tempContent.replace(/i/gi,"i");
-                    tempContent=tempContent.replace(/j/gi,"נ");tempContent=tempContent.replace(/k/gi,"к");tempContent=tempContent.replace(/l/gi,"ℓ");
-                    tempContent=tempContent.replace(/m/gi,"м");tempContent=tempContent.replace(/n/gi,"ท");tempContent=tempContent.replace(/o/gi,"σ");
-                    tempContent=tempContent.replace(/p/gi,"ρ");tempContent=tempContent.replace(/q/gi,"q");tempContent=tempContent.replace(/r/gi,"r");
-                    tempContent=tempContent.replace(/s/gi,"s");tempContent=tempContent.replace(/t/gi,"τ");tempContent=tempContent.replace(/u/gi,"υ");
-                    tempContent=tempContent.replace(/v/gi,"v");tempContent=tempContent.replace(/w/gi,"ω");tempContent=tempContent.replace(/x/gi,"x");
-                    tempContent=tempContent.replace(/y/gi,"y");tempContent=tempContent.replace(/z/gi,"ʑ");
+                    tempContent = tempContent.replace(/a/gi, "α");
+                    tempContent = tempContent.replace(/b/gi, "в");
+                    tempContent = tempContent.replace(/c/gi, "c");
+                    tempContent = tempContent.replace(/d/gi, "∂");
+                    tempContent = tempContent.replace(/e/gi, "є");
+                    tempContent = tempContent.replace(/f/gi, "ƒ");
+                    tempContent = tempContent.replace(/g/gi, "g");
+                    tempContent = tempContent.replace(/h/gi, "н");
+                    tempContent = tempContent.replace(/i/gi, "i");
+                    tempContent = tempContent.replace(/j/gi, "נ");
+                    tempContent = tempContent.replace(/k/gi, "к");
+                    tempContent = tempContent.replace(/l/gi, "ℓ");
+                    tempContent = tempContent.replace(/m/gi, "м");
+                    tempContent = tempContent.replace(/n/gi, "ท");
+                    tempContent = tempContent.replace(/o/gi, "σ");
+                    tempContent = tempContent.replace(/p/gi, "ρ");
+                    tempContent = tempContent.replace(/q/gi, "q");
+                    tempContent = tempContent.replace(/r/gi, "r");
+                    tempContent = tempContent.replace(/s/gi, "s");
+                    tempContent = tempContent.replace(/t/gi, "τ");
+                    tempContent = tempContent.replace(/u/gi, "υ");
+                    tempContent = tempContent.replace(/v/gi, "v");
+                    tempContent = tempContent.replace(/w/gi, "ω");
+                    tempContent = tempContent.replace(/x/gi, "x");
+                    tempContent = tempContent.replace(/y/gi, "y");
+                    tempContent = tempContent.replace(/z/gi, "ʑ");
                     break;
                 case 3:
-                    tempContent=tempContent.replace(/a/gi,"Д");tempContent=tempContent.replace(/b/gi,"β");tempContent=tempContent.replace(/c/gi,"¢");
-                    tempContent=tempContent.replace(/d/gi,"Ð");tempContent=tempContent.replace(/e/gi,"€");tempContent=tempContent.replace(/f/gi,"ƒ");
-                    tempContent=tempContent.replace(/g/gi,"ģ");tempContent=tempContent.replace(/h/gi,"Ћ");tempContent=tempContent.replace(/i/gi,"เ");
-                    tempContent=tempContent.replace(/j/gi,"ﮊ");tempContent=tempContent.replace(/k/gi,"Ҝ");tempContent=tempContent.replace(/l/gi,"Ł");
-                    tempContent=tempContent.replace(/m/gi,"м");tempContent=tempContent.replace(/n/gi,"ŋ");tempContent=tempContent.replace(/o/gi,"Ø");
-                    tempContent=tempContent.replace(/p/gi,"Р");tempContent=tempContent.replace(/q/gi,"Q");tempContent=tempContent.replace(/r/gi,"Я");
-                    tempContent=tempContent.replace(/s/gi,"ک");tempContent=tempContent.replace(/t/gi,"†");tempContent=tempContent.replace(/u/gi,"ц");
-                    tempContent=tempContent.replace(/v/gi,"ұ");tempContent=tempContent.replace(/w/gi,"ખ");tempContent=tempContent.replace(/x/gi,"ҳ");
-                    tempContent=tempContent.replace(/y/gi,"Ŷ");tempContent=tempContent.replace(/z/gi,"Ž");
+                    tempContent = tempContent.replace(/a/gi, "Д");
+                    tempContent = tempContent.replace(/b/gi, "β");
+                    tempContent = tempContent.replace(/c/gi, "¢");
+                    tempContent = tempContent.replace(/d/gi, "Ð");
+                    tempContent = tempContent.replace(/e/gi, "€");
+                    tempContent = tempContent.replace(/f/gi, "ƒ");
+                    tempContent = tempContent.replace(/g/gi, "ģ");
+                    tempContent = tempContent.replace(/h/gi, "Ћ");
+                    tempContent = tempContent.replace(/i/gi, "เ");
+                    tempContent = tempContent.replace(/j/gi, "ﮊ");
+                    tempContent = tempContent.replace(/k/gi, "Ҝ");
+                    tempContent = tempContent.replace(/l/gi, "Ł");
+                    tempContent = tempContent.replace(/m/gi, "м");
+                    tempContent = tempContent.replace(/n/gi, "ŋ");
+                    tempContent = tempContent.replace(/o/gi, "Ø");
+                    tempContent = tempContent.replace(/p/gi, "Р");
+                    tempContent = tempContent.replace(/q/gi, "Q");
+                    tempContent = tempContent.replace(/r/gi, "Я");
+                    tempContent = tempContent.replace(/s/gi, "ک");
+                    tempContent = tempContent.replace(/t/gi, "†");
+                    tempContent = tempContent.replace(/u/gi, "ц");
+                    tempContent = tempContent.replace(/v/gi, "ұ");
+                    tempContent = tempContent.replace(/w/gi, "ખ");
+                    tempContent = tempContent.replace(/x/gi, "ҳ");
+                    tempContent = tempContent.replace(/y/gi, "Ŷ");
+                    tempContent = tempContent.replace(/z/gi, "Ž");
+                    break;
+                case 4:
+                    tempContent=tempContent.replace(/a/gi,"α");tempContent=tempContent.replace(/b/gi,"в");tempContent=tempContent.replace(/c/gi,"૮");
+                    tempContent=tempContent.replace(/d/gi,"∂");tempContent=tempContent.replace(/e/gi,"૯");tempContent=tempContent.replace(/f/gi,"Բ");
+                    tempContent=tempContent.replace(/g/gi,"g");tempContent=tempContent.replace(/h/gi,"ђ");tempContent=tempContent.replace(/i/gi,"¡");
+                    tempContent=tempContent.replace(/j/gi,"j");tempContent=tempContent.replace(/k/gi,"ઝ");tempContent=tempContent.replace(/l/gi,"ℓ");
+                    tempContent=tempContent.replace(/m/gi,"ʍ");tempContent=tempContent.replace(/n/gi,"ท");tempContent=tempContent.replace(/o/gi,"ѳ");
+                    tempContent=tempContent.replace(/p/gi,"ρ");tempContent=tempContent.replace(/q/gi,"૧");tempContent=tempContent.replace(/r/gi,"૨");
+                    tempContent=tempContent.replace(/s/gi,"ઽ");tempContent=tempContent.replace(/t/gi,"Ƭ");tempContent=tempContent.replace(/u/gi,"ષ");
+                    tempContent=tempContent.replace(/v/gi,"√");tempContent=tempContent.replace(/w/gi,"ખ");tempContent=tempContent.replace(/x/gi,"×");
+                    tempContent=tempContent.replace(/y/gi,"y");tempContent=tempContent.replace(/z/gi,"ż");
+                    break;
+                case 5:
+                    tempContent=tempContent.replace(/a/gi,"д");tempContent=tempContent.replace(/b/gi,"b");tempContent=tempContent.replace(/c/gi,"c");
+                    tempContent=tempContent.replace(/d/gi,"d");tempContent=tempContent.replace(/e/gi,"Ξ");tempContent=tempContent.replace(/f/gi,"ƒ");
+                    tempContent=tempContent.replace(/g/gi,"g");tempContent=tempContent.replace(/h/gi,"h");tempContent=tempContent.replace(/i/gi,"i");
+                    tempContent=tempContent.replace(/j/gi,"ﻝ");tempContent=tempContent.replace(/k/gi,"k");tempContent=tempContent.replace(/l/gi,"Ŀ");
+                    tempContent=tempContent.replace(/m/gi,"m");tempContent=tempContent.replace(/n/gi,"n");tempContent=tempContent.replace(/o/gi,"Ø");
+                    tempContent=tempContent.replace(/p/gi,"p");tempContent=tempContent.replace(/q/gi,"q");tempContent=tempContent.replace(/r/gi,"Я");
+                    tempContent=tempContent.replace(/s/gi,"Ş");tempContent=tempContent.replace(/t/gi,"t");tempContent=tempContent.replace(/u/gi,"u");
+                    tempContent=tempContent.replace(/v/gi,"v");tempContent=tempContent.replace(/w/gi,"w");tempContent=tempContent.replace(/x/gi,"x");
+                    tempContent=tempContent.replace(/y/gi,"y");tempContent=tempContent.replace(/z/gi,"z");
                     break;
             }
             return tempContent;
@@ -102,8 +161,10 @@
             $("#result1").html(convertText($("#input").val(), 1));
             $("#result2").html(convertText($("#input").val(), 2));
             $("#result3").html(convertText($("#input").val(), 3));
+            $("#result4").html(convertText($("#input").val(), 4));
+            $("#result5").html(convertText($("#input").val(), 5));
         }
-        </script>
+    </script>
     <section class="hero">
         <div class="hero-body">
             <div class="container has-text-centered">
@@ -114,11 +175,11 @@
     </section>
     <section class="section">
         <div class="container">
-                <h2 class="subtitle has-text-centered" align=center>Write your text below.</h2>
+            <h2 class="subtitle has-text-centered" align=center>Write your text below.</h2>
             <nav class="level">
                 <div class="level-item">
                     <div class="field has-addons">
-                        
+
                         <p class="control">
                             <textarea style="width:400px; height:200px;" class="textarea" type="text" placeholder="put your text here" id="input" onchange="updateResults();"></textarea>
                         </p>
@@ -134,27 +195,58 @@
                 <th class="has-text-centered">Copy</th>
             </tr>
         </thead>
-        <tfoot>
-            <tr> <!-- Result and copy buttons table -->
-            <td style="vertical-align:middle;" id="result1">Write text on the box first</td><td><nav class="level"><div class="level-item"><button class="button" id="copy1" onclick="copy('#result1'); copied('#copy1');"><i class="fa fa-clipboard" aria-hidden="true"></i></button></div></nav></td>
-        </tr>
-        <tr>
-            <td style="vertical-align:middle;" id="result2">Write text on the box first</td><td><nav class="level"><div class="level-item"><button class="button" id="copy2" onclick="copy('#result2'); copied('#copy2');"><i class="fa fa-clipboard" aria-hidden="true"></i></button></div></nav></td>
-        </tr>
-        <tr>
-            <td style="vertical-align:middle;" id="result3">Write text on the box first</td><td><nav class="level"><div class="level-item"><button class="button" id="copy3" onclick="copy('#result3'); copied('#copy3');"><i class="fa fa-clipboard" aria-hidden="true"></i></button></div></nav></td>
-        </tr>
-    </tfoot>
+        <tfoot> <!-- Result and copy buttons table -->
+            <tr>         
+                <td style="vertical-align:middle;" id="result1">Write text on the box first</td>
+                <td>
+                    <nav class="level">
+                        <div class="level-item"><button class="button" id="copy1" onclick="copy('#result1'); copied('#copy1');"><i class="fa fa-clipboard" aria-hidden="true"></i></button></div>
+                    </nav>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align:middle;" id="result2">Write text on the box first</td>
+                <td>
+                    <nav class="level">
+                        <div class="level-item"><button class="button" id="copy2" onclick="copy('#result2'); copied('#copy2');"><i class="fa fa-clipboard" aria-hidden="true"></i></button></div>
+                    </nav>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align:middle;" id="result3">Write text on the box first</td>
+                <td>
+                    <nav class="level">
+                        <div class="level-item"><button class="button" id="copy3" onclick="copy('#result3'); copied('#copy3');"><i class="fa fa-clipboard" aria-hidden="true"></i></button></div>
+                    </nav>
+                </td>
+            </tr>
+            <tr>         
+                <td style="vertical-align:middle;" id="result4">Write text on the box first</td>
+                <td>
+                    <nav class="level">
+                        <div class="level-item"><button class="button" id="copy4" onclick="copy('#result4'); copied('#copy4');"><i class="fa fa-clipboard" aria-hidden="true"></i></button></div>
+                    </nav>
+                </td>
+            </tr>
+            <tr>         
+                <td style="vertical-align:middle;" id="result5">Write text on the box first</td>
+                <td>
+                    <nav class="level">
+                        <div class="level-item"><button class="button" id="copy5" onclick="copy('#result5'); copied('#copy5');"><i class="fa fa-clipboard" aria-hidden="true"></i></button></div>
+                    </nav>
+                </td>
+            </tr>
+        </tfoot>
     </table>
     <hr>
-        <hr>
-            <footer class="footer">
-                <div class="container">
-                    <div class="content has-text-centered">
-                        <p>WORK IN PROGRESS. by SMixqse.</p>
-                    </div>
-                </div>
-            </footer>
+    <hr>
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p>WORK IN PROGRESS. by SMixqse.</p>
+            </div>
+        </div>
+    </footer>
     <script>
         $("p.control input,button").toggleClass("is-medium has-text-centered");
     </script>
