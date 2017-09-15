@@ -33,5 +33,5 @@
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#ededed",
-  "theme_color": "##ededed"
+  "theme_color": "#ededed"
 }
