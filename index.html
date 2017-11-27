@@ -90,11 +90,6 @@ var chars = {
 					};
 
 			$("p.control input,button").toggleClass("is-medium has-text-centered");
-			/*if ('serviceWorker' in navigator) {
-			  navigator.serviceWorker.register('/sw.js').then(function() { 
-				console.log("Service Worker Registered"); 
-			  });
-			}*/ // Comentário pq isso dá erro ao usar localmente
 
 			$().ready(function(){for (var i = 0; i < chars["a"].length; i++) {
 				$("#tableOfResults").append(`<tr>         
