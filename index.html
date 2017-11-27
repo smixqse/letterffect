@@ -46,47 +46,7 @@
 					<th class="has-text-centered">Copy</th>
 				</tr>
 			</thead>
-			<tfoot> <!-- Result and copy buttons table -->
-				<tr>         
-					<td style="vertical-align:middle;" id="result">Write text on the box first</td>
-					<td>
-						<nav class="level">
-							<div class="level-item"><button class="button" id="copy1" onclick="copy('#result.1'); copied('#copy1');"><i class="fa fa-clipboard" aria-hidden="true"></i></button></div>
-						</nav>
-					</td>
-				</tr>
-				<tr>
-					<td style="vertical-align:middle;" id="result">Write text on the box first</td>
-					<td>
-						<nav class="level">
-							<div class="level-item"><button class="button" id="copy2" onclick="copy('#result.2'); copied('#copy2');"><i class="fa fa-clipboard" aria-hidden="true"></i></button></div>
-						</nav>
-					</td>
-				</tr>
-				<tr>
-					<td style="vertical-align:middle;" id="result">Write text on the box first</td>
-					<td>
-						<nav class="level">
-							<div class="level-item"><button class="button" id="copy3" onclick="copy('#result.3'); copied('#copy3');"><i class="fa fa-clipboard" aria-hidden="true"></i></button></div>
-						</nav>
-					</td>
-				</tr>
-				<tr>         
-					<td style="vertical-align:middle;" id="result">Write text on the box first</td>
-					<td>
-						<nav class="level">
-							<div class="level-item"><button class="button" id="copy4" onclick="copy('#result.4'); copied('#copy4');"><i class="fa fa-clipboard" aria-hidden="true"></i></button></div>
-						</nav>
-					</td>
-				</tr>
-				<tr>         
-					<td style="vertical-align:middle;" id="result">Write text on the box first</td>
-					<td>
-						<nav class="level">
-							<div class="level-item"><button class="button" id="copy5" onclick="copy('#result.5'); copied('#copy5');"><i class="fa fa-clipboard" aria-hidden="true"></i></button></div>
-						</nav>
-					</td>
-				</tr>
+			<tfoot id="tableOfResults"> <!-- Result and copy buttons table -->
 			</tfoot>
 		</table>
 		<hr>
@@ -99,12 +59,58 @@
 			</div>
 		</footer>
 		<script>
+
+var chars = {
+						'a': 'คαДαд',
+						'b': 'Ъвβвb',
+						'c': 'cc¢૮c',
+						'd': 'd∂Ð∂d',
+						'e': 'εє€૯Ξ',
+						'f': 'ƒƒƒԲƒ',
+						'g': 'ggģgg',
+						'h': 'ннЋђh',
+						'i': '¡iเ¡i',
+						'j': 'jנﮊjﻝ',
+						'k': 'ккҜઝk',
+						'l': 'łℓŁℓĿ',
+						'm': 'мммʍm',
+						'n': 'หหŋทn',
+						'o': 'σσØѳØ',
+						'p': 'pρРρp',
+						'q': 'qqQ૧q',
+						'r': 'яrЯ૨Я',
+						's': 'รsکઽŞ',
+						't': 'тτ†Ƭt',
+						'u': 'uυцષu',
+						'v': 'vvұ√v',
+						'w': 'ωωખખw',
+						'x': 'xxҳ×x',
+						'y': 'ყyŶyy',
+						'z': 'zʑzzz'
+					};
+
 			$("p.control input,button").toggleClass("is-medium has-text-centered");
-			if ('serviceWorker' in navigator) {
+			/*if ('serviceWorker' in navigator) {
 			  navigator.serviceWorker.register('/sw.js').then(function() { 
 				console.log("Service Worker Registered"); 
 			  });
-			}
+			}*/ // Comentário pq isso dá erro ao usar localmente
+
+			$().ready(function(){for (var i = 0; i < chars["a"].length; i++) {
+				$("#tableOfResults").append(`<tr>         
+					<td style="vertical-align:middle;" id="result` + (i + 1) + `">Write text on the box first</td>
+					<td>
+						<nav class="level">
+							<div class="level-item"><button class="button" id="copy` + (i + 1) + `" onclick="copy('#result` + (i + 1) + `'); copied('#copy` + (i + 1) + `');"><i class="fa fa-clipboard" aria-hidden="true"></i></button></div>
+						</nav>
+					</td>
+				</tr>`);
+				
+			};
+
+			});
+
+
 			function copy(selector) {
 				var text = $(selector).html();
 				var textArea = document.createElement("textarea");
@@ -137,46 +143,19 @@
 
 			function convertText(text, number) {
 				number = Number(number);
-				var tempContent = text,
-					chars = {
-						'a': 'คαДαд',
-						'b': 'Ъвβвb',
-						'c': 'cc¢૮c',
-						'd': 'd∂Ð∂d',
-						'e': 'εє€૯Ξ',
-						'f': 'ƒƒƒԲƒ',
-						'g': 'ggģgg',
-						'h': 'ннЋђh',
-						'i': '¡iเ¡i',
-						'j': 'jנﮊjﻝ',
-						'k': 'ккҜઝk',
-						'l': 'łℓŁℓĿ',
-						'm': 'мммʍm',
-						'n': 'หหŋทn',
-						'o': 'σσØѳØ',
-						'p': 'pρРρp',
-						'q': 'qqQ૧q',
-						'r': 'яrЯ૨Я',
-						's': 'รsکઽŞ',
-						't': 'тτ†Ƭt',
-						'u': 'uυцષu',
-						'v': 'vvұ√v',
-						'w': 'ωωખખw',
-						'x': 'xxҳ×x',
-						'y': 'ყyŶyy',
-						'z': 'zʑzzz'
-					};
+				var tempContent = text;
 				for (let i in chars) {
 					tempContent = tempContent.replace(new RegExp(i, 'gi'), chars[i][number]);
+					if (tempContent.startsWith("undefined")) {alert("Error");}
+					if (tempContent.startsWith("undefined")) break;
 				}
 				return tempContent;
 			}
 
-			function updateResults() {
-				$('tfoot tr').each(function(i) {
-					$('#input').val().length > 0 ? $(this).find('#result').html(convertText($('#input').val(), i)) : $(this).find('#result').html('Write text on the box first');
-				});
+			function updateResults() { // Aqui tá o sistema "quebrado"
+				$("[id^='result']").each(function(){$(this).html($("#input").val().length > 0 ? convertText($("#input").val(), parseInt($(this).attr("id").slice(-1)) - 1) : convertText("Write text in the box first", parseInt($(this).attr("id").slice(-1)) - 1));});
 			}
+
 		</script>
 	</body>
 </html>
